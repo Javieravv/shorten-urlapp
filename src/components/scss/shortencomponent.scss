@@ -60,7 +60,6 @@
         }
     }
 
-
     .list-urlshorten {
         display: grid;
         gap: 10px;
@@ -110,6 +109,10 @@
             }
         }
 
+    }
+
+    .urlcopied {
+        background-color: $color-Very-Dark-Blue !important;
     }
 
     // Media Queries

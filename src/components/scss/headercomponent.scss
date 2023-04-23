@@ -10,8 +10,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 5px; 
     margin-bottom: calc($height-shortecomponent / 2) + 30px;
-    
-    
 
     .header-section1 {
         display: flex;
@@ -44,7 +42,6 @@
         }
     }
 
-
     .header-section2 {
         order: 2;
         img {
@@ -56,7 +53,8 @@
     //Media queries
     @include media-tablet {
         height: $height-header - 40px;
-        margin: 100px 20px 0px 0px;
+        margin: 100px 20px 100px 0px;
+        // border: 3px solid royalblue;
 
         .header-section1 {
             padding: 10px 0;
@@ -95,10 +93,12 @@
             text-align: center;
             // height: auto;
             order: 2;
-            padding: 35px 0;
+            padding: 15px 0;
+            justify-content: space-between;
+            min-height: 250px;
 
             .title-header {
-                font-size: 3rem;
+                font-size: 2rem;
             }
 
             p {
@@ -114,9 +114,13 @@
 
         .header-section2 {
             order: 1;
-            margin: 0 auto;
+            // margin: 0 auto;
+            margin-bottom: 15px;
+            height: 250px;
             img {
+                // height: 200px;
                 // border: 3px red solid;
+
             }
         }
     }

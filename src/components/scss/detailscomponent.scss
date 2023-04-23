@@ -109,5 +109,44 @@
     }
 
     @include media_mobile {
+        .item-detail {
+            // background-color: white;
+            // position: relative;
+            // padding: 0px 30px 30px 30px;
+            // margin-bottom: $height-image;
+            // height: 300px;
+            // border-radius: 10px;
+            // z-index: 10;
+            
+    
+            .div-image {
+                // width: $height-image;
+                // height: $height-image;
+                // background-color: $color-Very-Dark-Blue;
+                // border-radius: 50%;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                // position: absolute;
+                // top: calc($height-image / 2) * -1;
+                left: calc(50% - calc($height-image / 2));
+        
+                img {
+                    width: 50%;
+                    object-fit: cover;
+                }
+            }
+        
+            h2 {
+                margin-top: calc(calc($height-image / 2) + 20px);
+            }
+        
+            p {
+                margin-top: 30px;
+                color: $color-Grayish-Violet;
+                font-weight: bold;
+            }
+    
+        }
     }
 }
