@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+@import '../../styles/mixings';
+
+.header-container {
+    margin-top: $martinTop-HeaderComponent;
+    // height: $height-header;
+    height: auto;
+    // border: 2px orange solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; 
+    margin-bottom: calc($height-shortecomponent / 2) + 30px;
+    
+    
+
+    .header-section1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 40px 0;
+        order: 1;
+
+        .title-header {
+            font-size: 4rem;
+            line-height: 1;
+            color: $color-Dark-Violet;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: $color-Grayish-Violet;
+        }
+
+        button {
+            background: $color-Cyan;
+            border: none;
+            border-radius: $borderRadiosButton;
+            color: white;
+            font-weight: 700;
+            width: 180px;
+            padding: 15px 0;
+        }
+    }
+
+
+    .header-section2 {
+        order: 2;
+        img {
+            width: 100%;
+            // border: 3px red solid;
+        }
+    }
+
+    //Media queries
+    @include media-tablet {
+        height: $height-header - 40px;
+        margin: 100px 20px 0px 0px;
+
+        .header-section1 {
+            padding: 10px 0;
+
+            .title-header {
+                font-size: 3rem;
+                line-height: 1;
+                color: $color-Dark-Violet;
+                font-weight: 700;
+            }
+    
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+    
+            button {}
+        }
+
+        .header-section2 {
+            order: 2;
+            img {
+                width: 100%;
+                // border: 3px red solid;
+            }
+        }
+    } 
+
+    @include media-mobile {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        height: auto;
+
+        .header-section1 {
+            align-items: center;
+            text-align: center;
+            // height: auto;
+            order: 2;
+            padding: 35px 0;
+
+            .title-header {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1;
+            }
+
+            button {
+                
+            }
+        }
+
+
+        .header-section2 {
+            order: 1;
+            margin: 0 auto;
+            img {
+                // border: 3px red solid;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,218 @@
+// estilos para el campo donde se recibe la url para acortar
+@import '../../styles/variables';
+@import '../../styles/mixings';
+
+.shorten-container {
+    // border: 5px orangered dashed;
+    width: $width-container;
+    min-height: $height-shortecomponent;
+
+    .marco-shortencomponent {
+        min-height: $height-shortecomponent;
+        // border: 3px green solid;
+        border-radius: 10px;
+        background: url('/images/bg-shorten-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        padding: 0px 5%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        margin-top: calc($height-shortecomponent - $height-shortecomponent - calc($height-shortecomponent / 2));
+
+
+        .input-url {
+            height: $height-shortenitems;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            border: 1px solid black;
+        }
+
+        .button-shortencomponent {
+            height: $height-shortenitems;
+            border: none;
+            border-radius: 8px;
+            background-color: $color-Cyan;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: opacity 0.5 ease-in-out;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .shorten-errormessage {
+            // Iría flotante.
+            // display: none;
+            position: absolute;
+            top: 70%;
+            left: 5%;
+            color: red;
+            font-weight: bold;
+        }
+    }
+
+
+    .list-urlshorten {
+        display: grid;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        .item-urlshorten {
+            // border: 3px solid yellowgreen;
+            background-color: white;
+            border-radius: 8px;
+            display: grid;
+            padding: 0px 20px;
+            grid-template-columns: 60% 30% 10%;
+            height: $height-shortenitems;
+            align-items: center;
+            // gap: 10px;
+
+            .origin-url,
+            .shorten-url {
+                display: block;
+            }
+
+            .origin-url {
+                font-weight: bold;
+            }
+
+            .shorten-url {
+                color: $color-Cyan;
+                font-weight: bold;
+                text-align: right;
+                margin-right: 15px;
+            }
+
+            .button-copyurl {
+                height: calc($height-shortenitems - 30%);
+                border: none;
+                background-color: $color-Cyan;
+                opacity: 1;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                transition: opacity 0.5 ease-in-out;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+    }
+
+    // Media Queries
+    @include media-tablet {
+        // background-color: yellowgreen;
+    }
+
+    @include media-mobile {
+        // background-color: saddlebrown;
+
+        .marco-shortencomponent {
+            background: url('/images/bg-shorten-mobile.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 25px 5%;
+            display: grid;
+            grid-template-columns: 1fr;
+            // align-items: center;
+            // justify-content: center;
+            // gap: 1px;
+            position: relative;
+            margin-top: 0;
+
+
+            .input-url {
+                // border: 1px solid sandybrown;
+            }
+
+            .button-shortencomponent {
+                // height: $height-shortenitems;
+                // border: none;
+                // border-radius: 8px;
+                // background-color: $color-Cyan;
+                // color: white;
+                // font-weight: 700;
+                // font-size: 1rem;
+            }
+
+            .shorten-errormessage {
+                // Iría flotante.
+                // display: none;
+                position: inherit;
+                top: 0%;
+                left: 0%;
+                // color: red;
+                // font-weight: bold;
+            }
+        }
+
+        .list-urlshorten {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .item-urlshorten {
+                // border: 3px solid yellowgreen;
+                // background-color: white;
+                // border-radius: 8px;
+                // display: grid;
+                padding: 0px 20px;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                align-items: top;
+                // justify-content: space-between;
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: space-around;
+                // align-items: left;
+                height: 150px;
+                // gap: 10px;
+
+                .origin-url,
+                .shorten-url {
+                    width: 100%;
+                    text-align: left;
+                    align-self: center;
+                    height: $height-shortenitems;
+                    align-items: center;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .origin-url {}
+
+                .shorten-url {
+                    // color: $color-Cyan;
+                    // font-weight: bold;
+                }
+
+                .button-copyurl {
+                    height: calc($height-shortenitems - 30%);
+                    border: none;
+                    background-color: $color-Cyan;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    width: 100%;
+                    flex: 1;
+                }
+            }
+
+        }
+    }
+
+}

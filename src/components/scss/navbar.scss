@@ -1,0 +1,142 @@
+@import '../../styles/variables';
+@import '../../styles/mixings';
+
+.container-nav {
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+.nav-shorteurl {
+    display: flex;
+    // border: 2px solid orange;
+    width: $width-container;
+    margin: 0 auto;
+    align-items: center;
+    height: $height-navbar;
+    background-color: white;
+    opacity: 1;
+    padding: 0 10%;
+    
+    .logo-shorteurl {}
+    
+    .menu-shorteurl {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+
+            li {
+                color: $color-Grayish-Violet;
+                font-weight: 700;
+                margin: 0px 25px;
+                cursor: pointer;
+                transition: color 0.2s ease-in-out;
+                font-size: 18px;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+
+        .options_menu {}
+
+        .login_menu {
+            display: flex;
+            align-items: center;
+
+            button {
+                background: $color-Cyan;
+                color: white;
+                font-weight: 700;
+                border: none;
+                border-radius: 25px;
+                padding: 10px 25px;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .icono-menu {
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        display: none;
+    }
+
+    // Media Queries
+
+    @include media-tablet {
+        width: $width-container + 10%;
+        padding: 0 2%;
+
+
+        .menu-shorteurl {
+            justify-content: center;
+            flex-direction: column;
+            position: fixed;
+            top: 80px;
+            left: 110%;
+            height: auto;
+            width: 80%;
+            background-color: $color-Dark-Violet;
+            border-radius: 20px;
+            transition: left 0.5s ease-in-out;
+            padding: 10px 10%;
+
+            hr {
+                width: 100%;
+            }
+
+            ul {
+                // display: flex;
+                flex-direction: column;
+                width: 100%;
+    
+                li {
+                    // color: $color-Grayish-Violet;
+                    // font-weight: 700;
+                    flex: 1;
+                    width: 100%;
+                    text-align: center;
+                    margin: 20px 0;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                }
+            }
+    
+            .options_menu {}
+    
+            .login_menu {
+                flex-direction: column;
+    
+                button {
+                    padding: 15px 0px;
+                    min-width: 90%;
+                    font-size: 1.2rem;
+                }
+            }
+
+            
+        }
+
+        .icono-menu {
+             display: block;
+        }
+
+        // Para mostrar el menú.
+        .view-menu {
+            left: 10%;
+        }
+    }
+
+}

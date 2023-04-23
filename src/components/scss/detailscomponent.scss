@@ -1,0 +1,113 @@
+@import '../../styles/variables';
+@import '../../styles/mixings';
+
+.detail-container {
+    margin-top: calc($height-image / 2);
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30px 30px 30px 100px 100px 30px;
+    gap: 25px;
+
+    .item-detail {
+        background-color: white;
+        position: relative;
+        padding: 0px 30px 30px 30px;
+        margin-bottom: $height-image;
+        height: 300px;
+        border-radius: 10px;
+        z-index: 10;
+        
+
+        .div-image {
+            width: $height-image;
+            height: $height-image;
+            background-color: $color-Very-Dark-Blue;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: calc($height-image / 2) * -1;
+            left: 20px;
+    
+            img {
+                width: 50%;
+                object-fit: cover;
+            }
+        }
+    
+        h2 {
+            margin-top: calc(calc($height-image / 2) + 20px);
+        }
+    
+        p {
+            margin-top: 30px;
+            color: $color-Grayish-Violet;
+            font-weight: bold;
+        }
+
+    }
+
+    .line-cyan {
+        width: 100%;
+        border-top: 10px $color-Cyan solid;
+        grid-column: 1/-1;
+        grid-row: 4 / 4;
+    }
+
+    // Clases para cada elemento del details
+    .brand-class {
+        // background-color: red;
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .detailed-class {
+        // background-color: slateblue;
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+
+    .fully-class {
+        // background-color: steelblue;
+        grid-column: 3/4;
+        grid-row: 3/5;
+    }
+
+    // Media queries
+    @include media_tablet {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr;
+        gap: 0px;
+
+        .line-cyan {
+            width: 100%;
+            border-top: none;
+            border-left: 10px solid $color-Cyan;
+            grid-row: 1/3;
+            grid-column: 2/-1;
+        }
+
+        .brand-class {
+            // background-color: red;
+            grid-column: 1/-1;
+            grid-row: 1/2;
+        }
+    
+        .detailed-class {
+            // background-color: slateblue;
+            grid-column: 1/-1;
+            grid-row: 2/3;
+        }
+    
+        .fully-class {
+            // background-color: steelblue;
+            grid-column: 1/-1;
+            grid-row: 3/4;
+        }
+    }
+
+    @include media_mobile {
+    }
+}

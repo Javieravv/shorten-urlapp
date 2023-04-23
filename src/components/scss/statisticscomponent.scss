@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+@import '../../styles/mixings';
+
+.statics-container {
+    width: $width-container;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 2rem;
+        padding: 5px 0;
+    }
+
+    p {
+        color: $color-Grayish-Violet;
+        padding: 5px 0;
+    }
+    
+
+}
