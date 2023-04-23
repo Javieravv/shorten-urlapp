@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import './scss/shortencomponent.scss';
 import shortenUrlApi, { callShortenUrlApi } from '../utils/shortenUrlApi';
 import axios from 'axios';
@@ -48,7 +48,7 @@ export const ShortenComponent = () => {
         message: 'Please add a link'
     })
 
-    const handleButtonClick = (e) => {
+    const handleButtonClick = () => {
         axios.get(`https://api.shrtco.de/v2/shorten?url=${valueUrl}`)
             .then((response) => {
                 const newUrlShorten: urlShorten = {
@@ -88,8 +88,8 @@ export const ShortenComponent = () => {
             })
     }
 
-    const handleChangeValueUrl = (e) => {
-        setValueUrl(e.target.value)
+    const handleChangeValueUrl = (event: ChangeEvent<HTMLInputElement>) => {
+        setValueUrl(event.target.value)
     }
 
     return (
